@@ -1,1 +1,1 @@
-You can find solutions of some codeforces problem here. Happy Coding :P
+C++ code for some codechef and codeforces problem can be found here. Happy coding :P
