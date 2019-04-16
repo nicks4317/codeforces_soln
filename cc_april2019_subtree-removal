@@ -4,15 +4,18 @@ using namespace std;
 
 ll max_profit(int u, vector<int> adj[],int a[],vector<bool>& vis,int x)
 {
-    vis[u]=true;
+    vis[u]=true; // set the current node to true in visited vector
     
-    ll sum = a[u];
+    /* calculate sum of all subtree node values */
+
+    ll sum = a[u]; 
     for(unsigned int i=0;i<adj[u].size();++i)
     {
         if(!vis[adj[u][i]])
             sum += max_profit(adj[u][i],adj,a,vis,x);
     }   
-    return max((long long)-x,sum);
+    return max((long long)-x,sum); /* check if cutting the subtree at a cost of subtracting X from the Profit or 
+    adding the subtree's sum to Profit is a better option */
 }   
 
 int main()
@@ -34,7 +37,7 @@ int main()
     		adj[u].push_back(v);
     		adj[v].push_back(u);
     	}
-        vector<bool> visited(n+1,false);
+        vector<bool> visited(n+1,false); //to avoid visiting the same node again 
         ll ans = max_profit(1,adj,inp,visited,x);
         printf("%lld\n", ans);
     }
