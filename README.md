@@ -1,2 +1,2 @@
-## All codeforces problems have been named with cf as prefix.
-## All codechef problems have been named with cc as prefix.
+# cf_XYZP - A codeforces problem
+# cc_XYZP - A codechef problem
